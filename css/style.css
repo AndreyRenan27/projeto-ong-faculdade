@@ -1,0 +1,434 @@
+/* =========================
+   CORES E MEDIDAS DO SITE
+   ========================= */
+
+:root {
+    --cor-principal: hwb(125 43% 16%);
+    --cor-secundaria: #f2f2f2;
+    --cor-destaque: hwb(29 47% 7%);
+    --cor-texto: #222222;
+    --cor-branco: #ffffff;
+    --cor-bolhas: hwb(108 51% 4%);
+
+    --espacamento-pequeno: 8px;
+    --espacamento-medio: 16px;
+    --espacamento-grande: 32px;
+    --bordas-pequenas: 10px;
+    --bordas-grandes: 20px;
+}
+
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--cor-texto);
+    background-color: oklch(95.815% 0.00011 271.152);
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+header {
+    display: flex;
+    background-color: var(--cor-principal);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header img {
+    width: 150px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   MENU
+   ========================= */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cor-destaque);
+}
+
+.links-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--espacamento-medio);
+}
+
+
+/* =========================
+   DROPDOWN
+   ========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: var(--cor-destaque);
+    padding: var(--espacamento-pequeno);
+}
+
+.submenu a {
+    display: block;
+    padding: var(--espacamento-pequeno);
+    white-space: nowrap;
+}
+
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+
+/* =========================
+   MENU HAMBÚRGUER
+   ========================= */
+
+.botao-menu {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+/* =========================
+   PÁGINA INICIAL
+   ========================= */
+
+.section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espacamento-grande);
+}
+
+.section1 p {
+    margin-right: 100px;
+}
+
+.section1 img {
+    width: 100%;
+    height: auto;
+}
+
+.section1 h2 {
+    background-color: var(--cor-principal);
+    margin-right: auto;
+}
+
+.sobrenos {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   AVISOS
+   ========================= */
+
+.section2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacamento-grande);
+}
+
+.section2 h2 {
+    grid-column: 1 / -1;
+    background-color: var(--cor-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avisos {
+    text-align: center;
+    border-radius: var(--bordas-pequenas);
+    background-color: var(--cor-bolhas);
+}
+
+.contato {
+    grid-column: 1 / -1;
+    margin-top: var(--espacamento-medio);
+    margin-bottom: var(--espacamento-medio);
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    background-color: hsla(0, 0%, 13%, 0.247);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   PROJETOS
+   ========================= */
+
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacamento-medio);
+}
+
+.projetos {
+    text-align: center;
+    background-color: var(--cor-bolhas);
+    margin-right: var(--espacamento-pequeno);
+    margin-left: var(--espacamento-pequeno);
+    border-radius: var(--bordas-pequenas);
+    transition: 0.3s;
+}
+
+.projetos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   CATEGORIAS DOS PROJETOS
+   ========================= */
+
+.badge {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 4px 10px;
+    border-radius: var(--bordas-pequenas);
+}
+
+
+/* =========================
+   DOAÇÕES
+   ========================= */
+
+.doacoes {
+    margin-top: var(--espacamento-medio);
+    margin-bottom: var(--espacamento-medio);
+}
+
+
+/* =========================
+   FORMULÁRIO
+   ========================= */
+
+form input,
+form select {
+    border: 2px solid #ccc;
+    padding: var(--espacamento-pequeno);
+    border-radius: var(--bordas-pequenas);
+    transition: 0.3s;
+}
+
+form input:valid,
+form select:valid {
+    border-color: green;
+}
+
+form input:focus:invalid,
+form select:focus:invalid {
+    border-color: red;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+button {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    border: none;
+    padding: var(--espacamento-pequeno) var(--espacamento-medio);
+    border-radius: var(--bordas-pequenas);
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-destaque);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* =========================
+   ALERTA
+   ========================= */
+
+.alerta {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    padding: var(--espacamento-medio);
+    border-radius: var(--bordas-pequenas);
+    margin: var(--espacamento-medio) 0;
+    border-left: 5px solid var(--cor-principal);
+}
+
+
+/* =========================
+   TOAST
+   ========================= */
+
+.toast {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: var(--espacamento-medio);
+    border-radius: var(--bordas-pequenas);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-conteudo {
+    background-color: var(--cor-branco);
+    padding: var(--espacamento-grande);
+    border-radius: var(--bordas-grandes);
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+/* Até 1200px */
+@media (max-width: 1200px) {
+
+    .lista-projetos,
+    .section2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Até 992px */
+@media (max-width: 992px) {
+
+    .section2,
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Até 768px */
+@media (max-width: 768px) {
+
+    .section1 p {
+        margin-right: 20px;
+    }
+
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Até 576px */
+@media (max-width: 576px) {
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .botao-menu {
+        display: block;
+    }
+
+    .links-menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    #menu-toggle:checked~.links-menu {
+        display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+        display: flex;
+    }
+}
+
+
+/* Até 400px */
+@media (max-width: 400px) {
+
+    header img {
+        width: 100px;
+        height: 100px;
+    }
+}
