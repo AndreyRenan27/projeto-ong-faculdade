@@ -82,6 +82,18 @@ const linkInicio = document.getElementById("link-inicio");
 const linkProjetos = document.getElementById("link-projetos");
 const linkCadastro = document.getElementById("link-cadastro");
 
+const botaoMenu = document.querySelector(".botao-menu");
+const linksMenu = document.querySelector(".links-menu");
+
+botaoMenu.addEventListener("click", function () {
+    const menuAberto = linksMenu.classList.toggle("menu-aberto");
+
+    botaoMenu.setAttribute("aria-expanded", menuAberto);
+    botaoMenu.setAttribute(
+        "aria-label",
+        menuAberto ? "Fechar menu" : "Abrir menu"
+    );
+});
 
 linkInicio.addEventListener("click", function (event) {
     event.preventDefault();

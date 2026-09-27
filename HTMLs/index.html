@@ -23,9 +23,9 @@
     <!-- Menu principal -->
     <nav class="menu">
 
-        <input type="checkbox" id="menu-toggle">
-
-        <label for="menu-toggle" class="botao-menu">☰</label>
+        <button type="button" class="botao-menu" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
 
         <div class="links-menu">
 
@@ -49,7 +49,7 @@
     </nav>
 
     <!-- O JavaScript coloca o conteúdo das páginas aqui -->
-    <main id="app" aria-live="polite" aria-atomic="true"></main>
+    <main id="app" role="main" aria-live="polite" aria-atomic="true"></main>
 
     <!-- Rodapé do site -->
     <footer>
