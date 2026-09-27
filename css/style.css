@@ -3,9 +3,9 @@
    ========================= */
 
 :root {
-    --cor-principal: hwb(125 43% 16%);
+    --cor-principal: #2e7d32;
+    --cor-destaque: #8a4b08;
     --cor-secundaria: #f2f2f2;
-    --cor-destaque: hwb(29 47% 7%);
     --cor-texto: #222222;
     --cor-branco: #ffffff;
     --cor-bolhas: hwb(108 51% 4%);
@@ -52,6 +52,10 @@ header img {
     border-radius: 50%;
 }
 
+header h1,
+header p {
+    color: var(--cor-branco);
+}
 
 /* =========================
    MENU
@@ -70,6 +74,9 @@ header img {
     gap: var(--espacamento-medio);
 }
 
+.links-menu.menu-aberto {
+    display: flex;
+}
 
 /* =========================
    DROPDOWN
@@ -95,7 +102,8 @@ header img {
     white-space: nowrap;
 }
 
-.dropdown:hover .submenu {
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
     display: flex;
 }
 
@@ -105,10 +113,6 @@ header img {
    ========================= */
 
 .botao-menu {
-    display: none;
-}
-
-#menu-toggle {
     display: none;
 }
 
@@ -136,6 +140,7 @@ header img {
 .section1 h2 {
     background-color: var(--cor-principal);
     margin-right: auto;
+    color: var(--cor-branco);
 }
 
 .sobrenos {
@@ -161,6 +166,7 @@ header img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--cor-branco);
 }
 
 .avisos {
@@ -289,6 +295,11 @@ button:focus {
     outline-offset: 2px;
 }
 
+.menu a:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 2px;
+}
+
 button:active {
     transform: scale(0.97);
 }
@@ -409,9 +420,6 @@ button:disabled {
         flex-direction: column;
     }
 
-    #menu-toggle:checked~.links-menu {
-        display: flex;
-    }
 
     .dropdown {
         width: 100%;
