@@ -1,3 +1,4 @@
+import imagemONG from "../imagens/imagem.webp";
 import { projetos } from "./projetos.js";
 import { cadastro } from "./cadastro.js";
 import { salvarUsuario, buscarUsuario } from "./storage.js";
@@ -8,7 +9,7 @@ function inicio() {
     app.innerHTML = `
         <section class="section1">
 
-            <img src="../imagens/imagem.png"
+            <img src="${imagemONG}"
                 alt="Imagem representando uma ação social da ONG">
 
             <h2 class="sobrenos">Sobre nós</h2>
